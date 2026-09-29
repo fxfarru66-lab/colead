@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    /* Exact Sophisticated Warm Neutral Palette */
+    --color-ivory: #F3F0E9;       /* Level 1: Primary light page background */
+    --color-cream: #E8DED2;       /* Level 2: Secondary light background / panels / forms */
+    --color-sand: #B8A48D;        /* Level 3: Warm sand / taupe / borders / highlights */
+    --color-warm-dark: #5B5045;   /* Level 4: Dark warm brown / spatial areas / buttons */
+    --color-charcoal: #342F2A;    /* Level 5: Deepest warm charcoal / primary text */
+  }
+
+  html, body {
+    background-color: #F3F0E9;
+    color: #342F2A;
+    font-family: var(--font-sans);
+    letter-spacing: -0.012em;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: -0.025em;
+  }
+}
+
+/* =========================================================
+   Premium 3D Spatial & Perspective Utilities (Restrained & Enterprise)
+   ========================================================= */
+
+.perspective-800 {
+  perspective: 800px;
+}
+.perspective-1200 {
+  perspective: 1200px;
+}
+.perspective-1600 {
+  perspective: 1600px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Restrained Enterprise 3D Card Hover & Elevation */
+.card-3d {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  will-change: transform, box-shadow;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card-3d:hover {
+    transform: translateY(-4px) scale(1.006);
+    box-shadow: 0 20px 36px -10px rgba(52, 47, 42, 0.12), 0 6px 16px -2px rgba(52, 47, 42, 0.06);
+  }
+}
+
+/* Smooth Page & Component 3D Entrance */
+@keyframes pageEntrance3D {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.992);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-page-enter {
+  animation: pageEntrance3D 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Profile Hero Cinematic Cutout & Blur */
+.hero-cinematic-backdrop {
+  position: relative;
+  overflow: hidden;
+}
+
+.person-cutout-hero {
+  position: relative;
+  z-index: 10;
+  filter: drop-shadow(0 20px 28px rgba(0, 0, 0, 0.45));
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.person-cutout-hero:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+/* Scroll-Linked Reveal Animation Classes */
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.scroll-reveal {
+  animation: revealUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Smooth Hidden Scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 2.5D Chair & Table Lighting */
+.chair-seat {
+  background: linear-gradient(145deg, #7A6D5E, #5B5045);
+  box-shadow: 
+    0 10px 20px -4px rgba(52, 47, 42, 0.45),
+    inset 0 1px 1px 0 rgba(243, 240, 233, 0.2),
+    inset 0 -2px 3px 0 rgba(52, 47, 42, 0.5);
+}
+
+.chair-seat-active {
+  background: linear-gradient(145deg, #B8A48D, #7A6D5E);
+  box-shadow: 
+    0 14px 28px -6px rgba(52, 47, 42, 0.6),
+    0 0 18px 2px rgba(232, 222, 210, 0.55),
+    inset 0 1px 2px 0 rgba(243, 240, 233, 0.45);
+}
+
+.table-surface {
+  background: radial-gradient(ellipse at 50% 40%, #5B5045 0%, #342F2A 100%);
+  box-shadow: 
+    0 24px 44px -10px rgba(52, 47, 42, 0.7),
+    inset 0 1px 2px 0 rgba(232, 222, 210, 0.15);
+}
+
+/* Accessibility: Strict Prefers-Reduced-Motion Compliance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transform: none !important;
+  }
+}

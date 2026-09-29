@@ -1,0 +1,6 @@
+{
+  "name": "CoLead",
+  "description": "Every project teaches the company something. CoLead remembers it. An organizational-memory and contribution visibility platform for software companies.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
